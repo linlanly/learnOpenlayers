@@ -1,0 +1,26 @@
+.map-box {
+  .menu {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 100;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    list-style: none;
+    select {
+      height: 33px;
+      line-height: 33px;
+    }
+    .type-label {
+      padding: 5px;
+      background-color: #ccc;
+      color: rgb(8, 137, 212);
+      font-weight: bold;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+    }
+  }
+}

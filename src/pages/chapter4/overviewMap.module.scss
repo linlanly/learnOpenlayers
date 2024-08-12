@@ -1,0 +1,31 @@
+.map-box {
+  :global {
+    .ol-custom-overviewmap,
+    .ol-custom-overviewmap.ol-uncollapible {
+      bottom: auto;
+      left: auto;
+      right: 0;
+      top: 0;
+    }
+    .ol-custom-overviewmap:not(.ol-collapsed) {
+      border: 1px solid black;
+      button {
+        bottom: auto;
+        left: auto;
+        right: 1px;
+        top: 1px;
+      }
+    }
+    .ol-custom-overviewmap  {
+      .ol-overviewmap-map {
+        border: none;
+        width: 300px;
+      }
+      .ol-overviewmap-box {
+        width: 60px;
+        height: 40px;
+        border: 2px solid red;
+      }
+    }
+  }
+}

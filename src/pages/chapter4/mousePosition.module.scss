@@ -1,0 +1,20 @@
+.map-box {
+  .position-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    width: auto;
+    z-index: 100;
+    border-radius: 6px;
+    background-color: rgba($color: #fff, $alpha: .5);
+  }
+  
+  :global {
+    .custom-mouse-position {
+      color: red;
+      font-size: 16px;
+      font-family: "微软雅黑";
+    }
+  }
+}

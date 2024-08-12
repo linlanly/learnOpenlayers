@@ -1,0 +1,34 @@
+.map-box {
+  .active-panel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 14px;
+    width: 300px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    font-family: "微软雅黑";
+    z-index: 100;
+    background-color: white;
+    ul {
+      list-style: none;
+    }
+    ul li {
+      margin-bottom: 5px;
+    }
+    .active-title {
+      line-height: 34px;
+      width: 100%;
+      background-color: #ccc;
+      color: white;
+    }
+    .footer-btn {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: flex-end;
+      button {
+        margin-right: 5px;
+      }
+    }
+  }
+}

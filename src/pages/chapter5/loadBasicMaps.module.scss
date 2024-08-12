@@ -1,0 +1,31 @@
+.map-box {
+  .menu {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 100;
+    background-color: white;
+
+    .checkbox {
+      margin-left: 20px;
+      padding-right: 5px;
+    }
+  }
+  .position-info {
+    position: absolute;
+    bottom: 5px;
+    left: 380px;
+    padding: 5px 10px;
+    width: auto;
+    z-index: 100;
+    border-radius: 6px;
+    background-color: rgba($color: #fff, $alpha: .5);
+  }
+  :global {
+    .custom-mouse-position {
+      color: red;
+      font-size: 16px;
+      font-family: "微软雅黑";
+    }
+  }
+}
