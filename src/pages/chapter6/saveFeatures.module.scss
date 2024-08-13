@@ -31,4 +31,13 @@
       }
     }
   }
+    .button-list {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      z-index: 100;
+      button {
+        margin-right: 5px;
+      }
+    }
 }
