@@ -1,0 +1,36 @@
+.detail-content {
+  max-height: 700px;
+  width: 100%;
+  overflow: auto;
+  .type-show {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .type-item {
+    .type-header {
+      background-color: #eee;
+      line-height: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      box-shadow: 0 2px 5px 1px #ccc;
+      padding: 0 10px;
+    }
+    .data-content {
+      width: fit-content;
+      border-top: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      margin-left: 10px;
+      margin-top: 10px;
+      td,th {
+        border-bottom: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+      }
+      td {
+        cursor: pointer;
+      }
+    }
+  }
+}

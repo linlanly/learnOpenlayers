@@ -1,0 +1,47 @@
+.system {
+  height: 100%;
+  height: 100%;
+  position: relative;
+
+  .header {
+    position: absolute;
+    top: 10px;
+    left: 120px;
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: 0 10px 5px rgba(0, 0, 0, 0.5);
+    /* 文字边框 */
+    -webkit-text-stroke: 2px white;
+    /* Safari */
+    text-stroke: 2px white;
+    /* 标准语法（可能不被所有浏览器支持） */
+    letter-spacing: 5px;
+    z-index: 100;
+
+    img {
+      position: absolute;
+      width: 90px;
+      left: -90px;
+      top: 10px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: -60px;
+      height: 80%;
+      width: calc(100% + 120px);
+      background-color: #ccc;
+      clip-path: polygon( 60px 0, 100% 0, calc(100% - 60px) 100%, 0 100%, 60px 0);
+      z-index: -1;
+    }
+    &::after {
+      top: 34px;
+      left: -60px;
+      background-color: rgb(153, 152, 152);
+      z-index: -2;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.popup-box {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  text-align: left;
+
+  .water-conservancy-info {
+    flex-shrink: 0;
+    margin-left: 10px;
+
+    &:last-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  .chart-box {
+    flex: 1;
+  }
+}

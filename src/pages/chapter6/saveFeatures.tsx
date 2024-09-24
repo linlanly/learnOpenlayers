@@ -19,7 +19,6 @@ import { DrawEvent } from 'ol/interaction/Draw'
 import { FeatureLike } from 'ol/Feature'
 
 const featureTable = new FeatrureTable()
-featureTable.open("features")
 let map: Map | null
 let shapeType = [
   {
@@ -49,12 +48,12 @@ let activeList = [
     {
       label: '图形类型',
       list: shapeType,
-      key: 'shape',
+      key: 'shapeType',
       value: 'Point'
     },
     {
       label: '信息类别',
-      key: 'info',
+      key: 'infoType',
       value: 'Point',
       list: [
         {
@@ -114,6 +113,8 @@ export default function () {
   let osmSource = new OSM({ url: 'https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png' })
   let vectorSource = new VectorSource()
   let vectorLayer = createLayer(vectorSource)
+
+  featureTable.open("features")
 
   function changeData(data: ChangeEvent<HTMLSelectElement | HTMLInputElement>, key: string) {
     if (active === 1) {
@@ -179,8 +180,6 @@ export default function () {
     setShowPanel(true)
   }
 
-
-
   function showSaveFeature() {
     featureTable.get().then((res) => {
       let result = res as resultOjb
@@ -192,7 +191,7 @@ export default function () {
             const feature = new Feature({
               name: item.name
             })
-            let geoJson = JSON.parse(item.geoJson as string)
+            let geoJson = item.geoJson ? JSON.parse(item.geoJson as string) : []
             if (Array.isArray(geoJson)) {
               geoJson = geoJson.map(item => Array.isArray(item) ? item.map(citem => Number(citem)) : Number(item))
             }
@@ -214,7 +213,6 @@ export default function () {
             })
             features.push(feature)
           })
-          console.log('show', features)
           vectorLayer = createLayer(new VectorSource({
             features: features
           }))

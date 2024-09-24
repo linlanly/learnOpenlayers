@@ -16,7 +16,6 @@ import axios from 'axios'
 import { TileGrid } from 'ol/tilegrid'
 import WMTSTileGrid from 'ol/tilegrid/WMTS'
 import { get, Projection } from 'ol/proj'
-import { tile } from 'ol/loadingstrategy'
 
 let map: Map | null
 let bingType = 'RoadOnDemand'

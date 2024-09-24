@@ -1,0 +1,51 @@
+.map-box {
+  .menu {
+    position: absolute;
+    bottom: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    left: 10px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    z-index: 100;
+    list-style: none;
+    background-color: rgb(245, 202, 122);
+    text-align: left;
+    border-radius: 5px;
+
+    .checkbox {
+      margin: 5px 15px;
+    }
+  }
+
+  :global {
+    .marker {
+      text-align: center;
+      white-space: nowrap;
+      padding-left: 25px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #088;
+        border-radius: 10px;
+        background-color: #0ff;
+        opacity: 0.5;
+      }
+
+      .address {
+        text-decoration: none;
+        color: #aa3300;
+        font-size: 14px;
+        font-weight: bold;
+        text-shadow: black .1em .1em .2em;
+      }
+    }
+  }
+}

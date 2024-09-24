@@ -1,0 +1,17 @@
+.satellite-clound-chart {
+  margin: 10px;
+  button {
+    margin-left: 10px;
+  }
+  .time-list {
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+    li {
+      cursor: pointer;
+      &.active {
+        background-color: #ccc;
+      }
+    }
+  }
+}

@@ -3,8 +3,13 @@ import './index.css'
 import {BrowserRouter} from "react-router-dom"
 import AppRouter from "./router/index"
 
+import store from '@/store/index'
+import {Provider} from 'react-redux'
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <AppRouter />
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
   </BrowserRouter>
 )

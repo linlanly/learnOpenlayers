@@ -27,6 +27,11 @@ export default defineConfig({
           'Referer': 'https://openlayers.org/',
           'Origin': 'https://openlayers.org'
         }
+      },
+      '/waterConservancy': {
+        target: 'http://slt.gxzf.gov.cn',
+        rewrite: path => path.replace(/^\/waterConservancy/, ''),
+        changeOrigin: true
       }
     }
   }

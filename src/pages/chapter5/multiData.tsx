@@ -1,5 +1,5 @@
 import 'ol/ol.css'
-import { Feature, Map, View, Tile } from 'ol'
+import { Feature, Map, View, ImageTile, Tile } from 'ol'
 import { OSM, TileArcGISRest, Vector as VectorSource } from 'ol/source'
 import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer'
 import { useEffect, ChangeEvent } from "react"
@@ -72,6 +72,8 @@ let activeList = [
 let filterKey = ['opacity', 'saturate', 'brightness', 'contrast', 'hue-rotate']
 
 let tileLoadFunction = function (imageTile: Tile, src: string, filterStr: string = '') {
+  // 直接imageTile的类型声明成ImageTile，在调用tileLoadFunction的地方会有错误提示
+  let tempImageTile = imageTile as ImageTile
   let img = new Image()
   img.setAttribute('crossOrigin', 'anonymous')
   img.onload = function () {
@@ -84,7 +86,8 @@ let tileLoadFunction = function (imageTile: Tile, src: string, filterStr: string
     let context = canvas.getContext('2d');
     (context as CanvasRenderingContext2D).filter = filterStr
     context?.drawImage(img, 0, 0, w, h, 0, 0, w, h)
-    imageTile.getImage().src = canvas.toDataURL('image/png')
+    let imgDoc = tempImageTile.getImage() as HTMLImageElement
+    imgDoc.src = canvas.toDataURL('image/png')
   }
   img.src = src
 }
